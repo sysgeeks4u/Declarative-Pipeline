@@ -42,7 +42,7 @@ pipeline
     {
         steps
         {
-        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatprod', path: '', url: 'http://172.31.68.420:8080')], contextPath: 'prodapp', war: '**/*.war'
+        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatprod', path: '', url: 'http://172.31.68.42:8080')], contextPath: 'prodapp', war: '**/*.war'
         }
     }
     
