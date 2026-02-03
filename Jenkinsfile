@@ -47,6 +47,26 @@ pipeline
     }
 
     }
+   
 
+   //Top Level Post Section.
+
+    post
+      {
+            always
+            {
+            echo 'This always runs at the very end of the pipeline.'
+            }
+           success
+           {
+             echo 'The entire Pipeline was successful.'
+           }
+            failure
+           {
+             echo 'The entire Pipeline failed.'
+             // Example: Send a notification email.
+            mail bcc: '', body: 'CI CD & CD Faild', cc: 'rnraju4u@gmail.com', from: '', replyTo: '', subject: 'CI Faild', to: 'ram.ashokit@gmail.com '
+           }
+       }
 }
 
