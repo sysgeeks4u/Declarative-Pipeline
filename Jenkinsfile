@@ -4,7 +4,7 @@ pipeline
 
     stages
     {
-     stage('ContinuousS Download') 
+     stage('Continuous Download') 
     {
         steps
         {
