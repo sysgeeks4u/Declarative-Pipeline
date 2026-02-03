@@ -38,7 +38,7 @@ pipeline
         }
     }
 
-    stage('Continuous Delivery') 
+    stage('Continuous Deploy') 
     {
         steps
         {
