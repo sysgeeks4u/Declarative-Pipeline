@@ -20,11 +20,11 @@ pipeline
         }
     }
 
-    stage('Continuous Deploy') 
+    stage('Continuous Delivery') 
     {
         steps
         {
-        deploy adapters: [tomcat9(credentialsId: 'admin', path: '', url: 'http://172.31.24.35:8080')], contextPath: 'testapp', war: '**/*.war'
+        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcattest', path: '', url: 'http://172.31.24.35:8080')], contextPath: 'testapp', war: '**/*.war'
         }
     }
 
@@ -42,7 +42,7 @@ pipeline
     {
         steps
         {
-        deploy adapters: [tomcat9(credentialsId: 'admin', path: '', url: 'http://172.31.68.42:8080')], contextPath: 'prodapp', war: '**/*.war'
+        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatprod', path: '', url: 'http://172.31.68.42:8080')], contextPath: 'prodapp', war: '**/*.war'
         }
     }
     
