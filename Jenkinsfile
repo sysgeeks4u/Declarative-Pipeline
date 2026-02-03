@@ -34,7 +34,7 @@ pipeline
         {
         git branch: 'main', url: 'https://github.com/sysgeeks4u/Functional-Testing.git'
 
-        sh 'java -jar /var/lib/jenkins/workspace/Testing/testing.jar'
+        sh 'java -jar /var/lib/jenkins/workspace/DEC-PIPELINE/testing.jar'
         }
     }
 
