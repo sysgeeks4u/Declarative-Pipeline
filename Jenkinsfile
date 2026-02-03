@@ -34,7 +34,7 @@ pipeline
         {
         git branch: 'main', url: 'https://github.com/sysgeeks4u/Functional-Testing.git'
 
-        sh 'java -jar /var/lib/jenkins/workspace/DEC-PIPELINE/testing.jar
+        sh 'java -jar /var/lib/jenkins/workspace/DEC-PIPELINE/testing.jar'
         }
     }
 
@@ -42,7 +42,7 @@ pipeline
     {
         steps
         {
-        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatprod', path: '', url: 'http://172.31.68.42:8080')], contextPath: 'prodapp', war: '**/*.war'
+        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatprod', path: '', url: 'http://172.31.68.420:8080')], contextPath: 'prodapp', war: '**/*.war'
         }
     }
     
