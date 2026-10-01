@@ -15,7 +15,7 @@ pipeline {
     {
       steps 
       {
-        // Building executable application
+        // Building executable application / Binary app
         sh 'mvn package'
       }
     }
