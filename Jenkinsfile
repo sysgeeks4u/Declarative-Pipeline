@@ -18,7 +18,7 @@ pipeline {
         script {
           try {
             //code that might Fail 
-            sh 'mvn package'
+            sh 'mvn packagee'
           }
 
           catch (Exception e) {
