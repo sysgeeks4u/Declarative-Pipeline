@@ -18,12 +18,14 @@ pipeline {
         script {
           try {
             //code that might Fail 
-            sh 'mvn packagee'
+            sh 'mvn package'
           }
 
           catch (Exception e) {
             //Handle the error
             echo "Build failed..."
+            //Error email notification to Build Team
+            mail bcc: '', body: 'CI CD & CD Process, Maven build has been failed', cc: 'rnraju4u@gmail.com', from: '', replyTo: '', subject: 'Build Failed', to: 'ram.ashokit@gmail.com'
           }
 
           finally {
