@@ -15,15 +15,31 @@ pipeline {
     {
       steps 
       {
-        // Building executable application / Binary app
+        script {
+          try {
+            //code that might Fail 
+            sh 'mvn package'
+          }
+
+          catch (Exception e) {
+            //Handle the error
+            echo "Build failed..."
+          }
+
+          finally {
+            //Always runs whether it success or failure
+            echo "cleaning up workspace"
+          }
+        // Building executable application
         sh 'mvn package'
       }
     }
-
+  }
     stage('Continuous Delivery')
     {
       steps 
       {
+
         // To deliver application on a QA Server
         deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'test-admin', path: '', url: 'http://172.31.22.81:8080')], contextPath: 'testapp', war: '**/*.war'
       }
