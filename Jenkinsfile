@@ -23,8 +23,7 @@ pipeline {
         stage('Continuous Test') {
             steps {
                git branch: 'main', url: 'https://github.com/sysgeeks4u/Functional-Testing.git'
-               sh 'java -jar /var/lib/jenkins/workspace/Declartive-Pipeline/testing.jar'
-
+               sh 'java -jar /var/lib/jenkins/workspace/Declarative-Pipeline/testing.jar'
             }
         }
 
