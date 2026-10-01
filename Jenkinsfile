@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Continuouss Download') {
+        stage('Continuous Download') {
             steps {
                 git branch: 'main', url: 'https://github.com/sysgeeks4u/Maven-Tomcat.git'
             }
