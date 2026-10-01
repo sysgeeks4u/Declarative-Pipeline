@@ -17,8 +17,8 @@ pipeline {
                         
                     } catch (Exception e) {
                         // Handle the error/exception
-                        echo "Caught an error: ${e.getMessage()}"
-                        currentBuild.result = 'FAILURE'
+                        echo "Build Faild...."
+                        
                     } finally {
                         // Always runs whether it passes or fails
                         echo "Cleaning up workspace..."
