@@ -10,7 +10,21 @@ pipeline {
         
         stage('Continuous Build') {
             steps {
-                sh 'mvn package'
+                script {
+                    try {
+                        // Code that might fail
+                        sh 'echo "Running build process..."'
+                        error 'Simulated error!' // Forces an exception
+                    } catch (Exception e) {
+                        // Handle the error/exception
+                        echo "Caught an error: ${e.getMessage()}"
+                        currentBuild.result = 'FAILURE'
+                    } finally {
+                        // Always runs whether it passes or fails
+                        echo "Cleaning up workspace..."
+                    }
+                }
+                
             }
         }
 
