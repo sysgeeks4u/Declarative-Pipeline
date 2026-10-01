@@ -13,8 +13,8 @@ pipeline {
                 script {
                     try {
                         // Code that might fail
-                        sh 'echo "Running build process..."'
-                        error 'Simulated error!' // Forces an exception
+                        sh 'mvn packageee'
+                        
                     } catch (Exception e) {
                         // Handle the error/exception
                         echo "Caught an error: ${e.getMessage()}"
